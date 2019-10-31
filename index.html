@@ -1,0 +1,224 @@
+<!--
+  Version v0.0.4
+  User songshuzhong@bonc.com.cn
+  ------------------------------------------------------------
+  Date         Author          Version            Description
+  ------------------------------------------------------------
+  2018年9月9日 songshuzhong    v0.0.4            采用sequelize持久化解决方案
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面建模</title>
+  <link rel="icon" href="./static/img/favicon.png">
+  <link rel="stylesheet" href="./static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/cs/pageHome.css">
+</head>
+<script>
+  var contextPath = '{{contextPath}}';
+  var apiPath = 'https://www.fastmock.site/mock/14f5933225e42fe03f6cc4872337359b/visualize';
+  var version = '';
+</script>
+<body>
+<aside class="v-feature v-feature-bg">
+  <nav class="navbar navbar-default navbar-fixed-top" style="background-color: transparent; border-bottom-color: transparent; margin-bottom: 0;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#v-is-narrow">
+          <span class="sr-only">切换导航</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav>
+          <a class="navbar-brand">
+            <img src="./static/img/favicon.png" width="30" height="30" style="display: inline-block; margin: -0.25rem 0.75rem 0 0;" alt="">可视化布局系统
+          </a>
+        </nav>
+      </div>
+      <div class="collapse navbar-collapse" id="v-is-narrow">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href='./views/resume.html'><span class="glyphicon glyphicon-user"></span>&nbsp;关于我</a></li>
+          <li><a href="./views/changeBlogs.html"><span class="glyphicon glyphicon-time"></span>&nbsp;更新日志</a></li>
+          <li><a href="./views/visualize.html"><span class="glyphicon glyphicon-gift"></span>&nbsp;组件库</a></li>
+          <li><a href="https://github.com/songshuzhong"><span class="glyphicon glyphicon-link"></span>&nbsp;项目地址</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="v-ball ball" style="top: 0; left: 0; width: 15%; padding-bottom: 15%"></div>
+  <div class="v-ball ball" style="top: -100px; left: 150px; width: 25%; padding-bottom: 25%;"></div>
+  <div class="v-ball ball" style="top: 200px; right: 200px; width: 5%; padding-bottom: 5%"></div>
+  <div class="v-ball ball" style="bottom: -100px; width: 100%; height: 200px;"></div>
+  <div style="top: 35%; width: 100%; position: absolute; text-align: center">
+    <img src="./static/img/favicon.png" width="100px" height="100px" style="display: inline-block; margin: -0.25rem 0.75rem 0 0;" alt="">
+    <h1>可视化布局系统</h1>
+    <div id="v-feature-desc" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <h4>灵活易用，了解css、javascript、html即可上手。</h4>
+        </div>
+        <div class="item">
+          <h4>丰富的组件库支持，更加自由的搭配组合网页。</h4>
+        </div>
+        <div class="item">
+          <h4>让开发体验更贴心、美好。</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+<aside class="v-feature v-feature-bg" style="background-color: white; padding: 100px 30px;">
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="v-feature v-card">
+      <span class="svg-icon flat-filled" id="filled-graph">
+        <svg class="flat_icon" width="100px" height="100px" viewBox="0 0 100 100">
+          <path class="circle" d="M50,2.125c26.441,0,47.875,21.434,47.875,47.875c0,26.441-21.434,47.875-47.875,47.875C17.857,97.875,2.125,76.441,2.125,50C2.125,23.559,23.559,2.125,50,2.125z"></path>
+          <g class="icon">
+            <path class="bar_left" d="M42.401,35.96l15.197,11.053v25.563H42.401V35.96z"></path>
+            <path class="bar_middle" d="M27.201,42.178l15.199-6.22v36.616c0,0-8.186,0-11.294,0c-1.785,0-3.986-1.842-3.906-3.397C27.518,63.139,27.201,42.178,27.201,42.178z"></path>
+            <path class="bar_right" d="M72.8,69.178c0.08,1.556-2.121,3.398-3.907,3.398c-3.107,0-11.294,0-11.294,0V47.013l15.199-17.271C72.8,29.741,72.483,63.139,72.8,69.178z"></path>
+            <path class="dot_4" d="M42.401,33.642c1.524,0,2.763,1.237,2.763,2.764s-1.238,2.764-2.763,2.764c-1.527,0-2.764-1.237-2.764-2.764S40.875,33.642,42.401,33.642z"></path>
+            <path class="dot_3" d="M57.599,42.623c1.526,0,2.763,1.237,2.763,2.763c0,1.527-1.236,2.765-2.763,2.765c-1.525,0-2.763-1.237-2.763-2.765C54.836,43.86,56.073,42.623,57.599,42.623z"></path>
+            <path class="dot_2" d="M72.8,27.424c1.524,0,2.762,1.238,2.762,2.764c0,1.527-1.237,2.765-2.762,2.765c-1.527,0-2.764-1.237-2.764-2.765C70.034,28.661,71.271,27.424,72.8,27.424z"></path>
+            <path class="dot_1" d="M27.201,38.479c1.525,0,2.764,1.237,2.764,2.764s-1.238,2.765-2.764,2.765c-1.526,0-2.763-1.238-2.763-2.765C24.438,39.715,25.675,38.479,27.201,38.479z"></path>
+          </g>
+        </svg>
+      </span>
+      <div class="caption" style="text-align: center">
+        <h4>可视化</h4>
+        <p>所见即所得，随意拖动鼠标即可让编码有图可依。</p>
+        <a href="https://www.processon.com/view/5bd6abc9e4b0eb8eb04afd09">页面建模结构图</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="v-feature v-card">
+      <span class="svg-icon flat-filled" id="filled-rocket">
+        <svg class="flat_icon" width="100px" height="100px" viewBox="0 0 100 100">
+          <path class="circle" d="M50,2.125c26.441,0,47.875,21.434,47.875,47.875c0,26.441-21.434,47.875-47.875,47.875C17.857,97.875,2.125,76.441,2.125,50C2.125,23.559,23.559,2.125,50,2.125z"></path>
+          <g class="icon">
+            <path class="engine" d="M32.515,51.63l16.327,16.328l-3.571,5.612L26.902,55.2L32.515,51.63z"></path>
+            <path class="base" d="M26.902,46.083l1.021-1.021c0,0,7.669-1.483,14.828-8.643c14.165-14.164,30.583-9.217,30.583-9.217s4.946,16.421-9.216,30.583c-7.159,7.158-8.643,14.829-8.643,14.829l-1.021,1.021L26.902,46.083z"></path>
+            <path class="window" d="M62.619,39.311c2.817,2.818,2.817,7.387,0,10.205c-2.817,2.82-7.388,2.82-10.204,0c-2.817-2.817-2.817-7.386,0-10.205C55.233,36.493,59.802,36.493,62.619,39.311z"></path>
+            <path class="glass" d="M61.09,40.841c1.972,1.974,1.972,5.172,0,7.144c-1.974,1.972-5.171,1.972-7.143,0c-1.973-1.973-1.973-5.171,0-7.144C55.919,38.87,59.116,38.87,61.09,40.841z"></path>
+            <path class="flame" d="M33.326,66.073c1.69,1.692,1.747,4.377,0.126,5.999c-1.859,1.858-6.759,1.656-7.269,1.146c-0.511-0.511-0.713-5.41,1.146-7.27C28.949,64.327,31.635,64.384,33.326,66.073z"></path>
+          </g>
+        </svg>
+      </span>
+      <div class="caption" style="text-align: center">
+        <h4>快速构建</h4>
+        <p>争夺每一秒，让你节省出编码的时间用在喝咖啡上。</p>
+        <a href="https://www.processon.com/view/5bd6ca78e4b07af05212e98d">一次拖拽流程图</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="v-feature v-card">
+      <span class="svg-icon flat-filled" id="filled-disk">
+        <svg class="flat_icon" width="100px" height="100px" viewBox="0 0 100 100">
+          <path class="circle" d="M50,2.125c26.441,0,47.875,21.434,47.875,47.875S76.441,97.875,50,97.875C17.857,97.875,2.125,76.441,2.125,50S23.559,2.125,50,2.125z"></path>
+          <g class="icon">
+            <path class="base" d="M72.848,75.133H27.151c-1.262,0-2.285-1.023-2.285-2.285V27.151c0-1.261,1.022-2.284,2.285-2.284h38.843l9.139,9.138v38.842C75.133,74.109,74.109,75.133,72.848,75.133z"></path>
+            <path class="top" d="M65.992,24.867v15.994c0,1.261-1.021,2.285-2.283,2.285H36.29c-1.262,0-2.285-1.023-2.285-2.285V24.867H65.992z"></path>
+            <path class="top_right" d="M55.711,27.914h8.379v12.185h-8.379V27.914z"></path>
+            <path class="bottom" d="M65.992,75.133V53.047c0-1.261-1.021-2.285-2.283-2.285H36.29c-1.262,0-2.285,1.024-2.285,2.285v22.086H65.992z"></path>
+            <path class="text" d="M39.718,58.377h20.563c0.211,0,0.381-0.17,0.381-0.379c0-0.211-0.17-0.381-0.381-0.381H39.718c-0.21,0-0.38,0.17-0.38,0.381C39.337,58.207,39.508,58.377,39.718,58.377z M60.281,63.709H39.718c-0.21,0-0.38,0.172-0.38,0.381c0,0.211,0.17,0.381,0.38,0.381h20.563c0.211,0,0.381-0.17,0.381-0.381C60.662,63.881,60.492,63.709,60.281,63.709z M60.281,69.801H39.718c-0.21,0-0.38,0.172-0.38,0.381c0,0.211,0.17,0.381,0.38,0.381h20.563c0.211,0,0.381-0.17,0.381-0.381C60.662,69.975,60.492,69.801,60.281,69.801z"></path>
+          </g>
+        </svg>
+      </span>
+      <div class="caption" style="text-align: center">
+        <h4>细腻友好</h4>
+        <p>人性化交互，可重复性编辑，让你爱不释手。</p>
+        <a href="https://www.processon.com/view/5bd7bd9be4b0599a51c98464">控件分类与规则</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="v-feature v-card">
+      <span class="svg-icon flat-filled" id="filled-pencil">
+        <svg class="flat_icon" width="100px" height="100px" viewBox="0 0 100 100">
+          <path class="circle" d="M50,4.25c26.441,0,47.875,21.434,47.875,47.875C97.875,78.566,76.441,100,50,100C17.857,100,2.125,78.566,2.125,52.125C2.125,25.684,23.559,4.25,50,4.25z"></path>
+          <g class="icon">
+            <path class="wood" d="M26.683,55.108l16.801,16.84L23.62,75.635L26.683,55.108z"></path>
+            <path class="base_top" d="M53.408,28.524l5.809,5.813L32.489,61.012l-5.807-5.75L53.408,28.524z"></path>
+            <path class="base_bottom" d="M63.639,38.64l6.569,6.572L43.483,71.948l-6.635-6.575L63.639,38.64z"></path>
+            <path class="base_middle" d="M58.868,33.931l6.569,6.573L38.714,67.239l-6.569-6.574L58.868,33.931z"></path>
+            <path class="tip" d="M31.731,74.101l-8.635,1.776l1.776-8.638L31.731,74.101z"></path>
+            <path class="eraser" d="M65.004,23.567l10.455,10.461c1.926,1.926,1.926,5.049,0,6.975L58.03,23.567C59.958,21.642,63.078,21.642,65.004,23.567z"></path>
+            <path class="metal" d="M58.555,22.899l17.429,17.437c0.322,0.321,0.322,0.843,0,1.163l-4.244,4.246c-0.32,0.322-0.841,0.322-1.163,0L53.147,28.308c-0.319-0.32-0.319-0.842,0-1.161l4.245-4.248C57.715,22.578,58.235,22.578,58.555,22.899z"></path>
+          </g>
+        </svg>
+      </span>
+      <div class="caption" style="text-align: center">
+        <h4>简单易学</h4>
+        <p>降低学习成本，让每个人享受开发的乐趣。</p>
+        <a>了解详情</a>
+      </div>
+    </div>
+  </div>
+</aside>
+<aside class="col-lg-12">
+  <h2 class="v-support-logo">Thank You!</h2>
+  <p class="v-support-logo">
+    <a href="https://www.w3.org/standards/techs/html" title="html5">
+      <img src="./static/img/html5.png" />
+    </a>
+    <a href="https://www.w3.org/standards/techs/css" title="css3">
+      <img src="./static/img/css3.png" />
+    </a>
+    <a href="https://www.w3.org/standards/techs/js" title="javascript">
+      <img src="./static/img/js.png" />
+    </a>
+    <a href="http://jquery.com/" title="jquery">
+      <img src="./static/img/jQuery.png" />
+    </a>
+    <a href="https://v3.bootcss.com/" title="bootstrap3">
+      <img src="./static/img/bootstrap.png" />
+    </a>
+    <a href="https://nodejs.org/zh-cn/" title="nodejs">
+      <img src="./static/img/node.png" />
+    </a>
+    <a href="https://www.npmjs.com/" title="npm">
+      <img src="./static/img/npm.png" />
+    </a>
+    <a href="https://koa.bootcss.com/" title="koa">
+      <img src="./static/img/koa.png" />
+    </a>
+    <a href="http://docs.sequelizejs.com/" title="sequelize">
+      <img src="./static/img/sequelize.png" />
+    </a>
+    <a href="https://github.com/easy-mock/easy-mock" title="mock">
+    <img src="./static/img/mock.png" />
+  </a>
+  </p>
+</aside>
+<footer class="col-lg-12">
+  <article class="col-lg-4 col-md-4 col-sm-4">
+    <h4>连接</h4>
+    <a>代码仓库</a>
+    <a>更新日志</a>
+    <a>设计理念</a>
+    <a>常见问题</a>
+    <a>加入我们</a>
+  </article>
+  <article class="col-lg-4 col-md-4 col-sm-4">
+    <h4>相关</h4>
+    <a>react-isomorphic</a>
+    <a>react-java-isomorphic</a>
+  </article>
+  <article class="col-lg-4 col-md-4 col-sm-4">
+    <h4>联系</h4>
+    <a>qq: 1462026137</a>
+    <a>phone: 15510351839</a>
+    <a>wechat: ssz1462026137</a>
+    <a>E-mail:sshuzhong@outlook.com</a>
+  </article>
+</footer>
+<script type="text/javascript" src="./static/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/js/pagesHome.js"></script>
+</body>
+</html>

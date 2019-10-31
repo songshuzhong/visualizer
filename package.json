@@ -1,0 +1,44 @@
+{
+  "name": "visualize",
+  "version": "0.0.2",
+  "keywords": [
+    "css",
+    "less",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "description": "visualize",
+  "main": "index.js",
+  "authors": "songshuzhong",
+  "license": "SEE LICENSE IN <LICENSE>",
+  "homepage": "https://songshuzhong.github.io/resume/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/app.js",
+    "start:inspect": "nodemon --debug --inspect ./server/app.js"
+  },
+  "author": "",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "bower": "^1.8.4",
+    "config": "^2.0.1",
+    "jquery": "^3.3.1",
+    "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
+    "koa-bodyparser": "^4.2.1",
+    "koa-ejs": "^4.1.2",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static-cache": "^5.1.2",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0",
+    "underscore": "^1.9.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
